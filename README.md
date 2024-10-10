@@ -49,6 +49,7 @@ HTML101
 
 
 * CSS
+    * 명시도(Specificity)
 
 * Coding Convension 
     * ID, Class Naming

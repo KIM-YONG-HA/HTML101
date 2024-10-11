@@ -31,7 +31,7 @@ HTML101
 * HTML tag
  * h1, p
  * br, hr
- * strong, b
+ * strong, b, mark
  * i, em, cite, blockqoute
  * small, sub, sup
  * ul, ol, dl

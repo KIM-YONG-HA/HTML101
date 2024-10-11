@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>srite 반응형</title>
 </head>
 <body>
 
@@ -14,6 +14,7 @@ ul {list-style:none;}
 .sprite_cmn {max-width:400px}
 
 
+/* 1row 4column sprite img */
 .sprite_01 ul {display:flex;margin:0 0 20px 0}
 .sprite_01 ul li {width:100px;height:100px;background:url(img/sprite_row_1.png) 0 0 no-repeat;}
 .sprite_01 ul li:nth-child(2) {background-position:-100px 0;}
@@ -21,9 +22,36 @@ ul {list-style:none;}
 .sprite_01 ul li:nth-child(4) {background-position:-300px 0;}
 
 
+/* 
+
+[준비사항]
+1. sprite 이미지를 가로세로 비율이 같게 작업한다.
+
+[반응형 작업 방법]
+1. 반응형 break point 도달 시 이미지를 확대해준다 
+ - background-size : column 수 x 100 
+ - ex) 이미지가 가로로 4개 나란하다면 4 x 100 = 400%로 변경
+
+2. background-position을 %값으로 변경한다
+ - column이 4개라면 x축으로 3번 이동하기 때문에 100 / (column - 1) 값만큼 이동
+ - 
+
+[장점]
+1. break point 별로 원하는 사이즈로 조정이 가능하다 
+2. hover 기능을 css로 구현가능하다.
+3. 아이콘이 많을 경우 한 이미지로 처리 가능하다 
+
+[단점]
+1. 분기점 별로 백그라운드가 출력되는 영역 width, height를 수정해야한다.
+2. % 계산이 번거롭다
+3. 유지보수성이 떨어진다.
+
+*/
+
+
 @media all and (max-width:400px) {
 
-    .sprite_01 ul li {width:50px;height:50px;background-size:400%;}
+    .sprite_01 ul li {width:50px;height:50px;background-size:400%;} 
     .sprite_01 ul li:nth-child(2) {background-position:33.33% 0;}
     .sprite_01 ul li:nth-child(3) {background-position:66.66% 0;}
     .sprite_01 ul li:nth-child(4) {background-position:100% 0;}
@@ -31,8 +59,7 @@ ul {list-style:none;}
 }
 
 
-
-
+/* 2row 4column sprite img */
 .sprite_02 ul {display:flex;margin:0 0 20px 0}
 .sprite_02 ul li {width:100px;height:100px;background:url(img/sprite_row_2.png) 0 0 no-repeat;}
 .sprite_02 ul li:nth-child(2) {background-position:-100px 0;}
@@ -55,6 +82,10 @@ ul {list-style:none;}
 
 
 <div class="sprite_01 sprite_cmn">
+    <h2>row 1 x column 4개</h2>
+    <p>스프라이트 이미지 크기 : 100 x 400 </p>
+    <p>아이콘 1개당 크기 : 100 x 100</p>
+    <p>A / B / C / D</p>
     <ul>
         <li></li>
         <li></li>
@@ -67,6 +98,10 @@ ul {list-style:none;}
 
 
 <div class="sprite_02 sprite_cmn">
+    <h2>row 2 x column 4개</h2>
+    <p>스프라이트 이미지 크기 : 200 x 400 </p>
+    <p>아이콘 1개당 크기 : 100 x 100</p>
+    <p>A / B / C / D <br>E / F / G / H</p>
     <ul>
         <li></li>
         <li></li>

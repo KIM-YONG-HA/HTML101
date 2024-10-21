@@ -10,6 +10,7 @@
 
 
 <!-- 
+    
 1. float
 - float:left, float:right
 
@@ -38,6 +39,9 @@
 /* 1번 방식 : float 다음 요소에 clear:both */
 .box_01 p.new_line {clear:both;background:#ccc;}
 
+
+.box_02 p.new_line:before {content:"";display:block;clear:both}
+.box_03 .box_inner {overflow:hidden;}
 
 </style>
 
@@ -110,27 +114,29 @@ new line
     <!-- //box_02 -->
 
 
-    <div class="box_02 box_cmn">
+    <div class="box_03 box_cmn">
         <h2>3. overflow:hidden </h2>
-        <div class="float_left">
-        
+        <div class="box_inner">
+            <div class="float_left">
+            
+            </div>
+            
+            <div class="float_right">
+            
+            </div>
+            
+            <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            Atque dignissimos voluptas ipsam sed voluptates ex omnis deserunt,
+            recusandae enim vel error similique fugit porro blanditiis ea! Dolores eligendi cupiditate hic!
+            </p>
+            
+            <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            Atque dignissimos voluptas ipsam sed voluptates ex omnis deserunt,
+            recusandae enim vel error similique fugit porro blanditiis ea! Dolores eligendi cupiditate hic!
+            </p>
         </div>
-        
-        <div class="float_right">
-        
-        </div>
-        
-        <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-        Atque dignissimos voluptas ipsam sed voluptates ex omnis deserunt, 
-        recusandae enim vel error similique fugit porro blanditiis ea! Dolores eligendi cupiditate hic!
-        </p>
-        
-        <p>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-        Atque dignissimos voluptas ipsam sed voluptates ex omnis deserunt, 
-        recusandae enim vel error similique fugit porro blanditiis ea! Dolores eligendi cupiditate hic!
-        </p>
         
         
         <p class="new_line">

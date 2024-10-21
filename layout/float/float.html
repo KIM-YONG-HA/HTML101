@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>float</title>
+</head>
+<body>
+    
+
+
+<!-- 
+    
+1. float
+- float:left, float:right
+
+2. clear
+- clear:left, clear:right도 가능하나 
+- 다음 요소에 clear:both;
+
+3. clearfix 
+- 가상클래스로 ::after {content:"";clear:both;display:block}
+
+4. over-flow:hidden 
+- 실무에서 2, 3번 적용 후에도 안 되는 경우 오버플로우 히든이 적용되어있는지 확인.
+
+5. 잘 사용되지 않지만 float이 적용되어있는 오래된 홈페이지가 있다면 참고. 
+ -->
+
+
+
+<style>
+
+.box_cmn {padding:20px;border:1px solid #ccc;margin:0 0 20px 0}
+.float_left {float:left;width:100px;height:200px;background:#fa1;}
+.float_right {float:right;width:100px;height:200px;background:rgb(255, 92, 17);}
+
+
+/* 1번 방식 : float 다음 요소에 clear:both */
+.box_01 p.new_line {clear:both;background:#ccc;}
+
+
+.box_02 p.new_line:before {content:"";display:block;clear:both}
+.box_03 .box_inner {overflow:hidden;}
+
+</style>
+
+
+
+
+<div class="box_01 box_cmn">
+<h2>1. float이 적용된 다음 요소에 clear:both</h2>
+<div class="float_left">
+
+</div>
+
+<div class="float_right">
+
+</div>
+
+<p>
+Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+Atque dignissimos voluptas ipsam sed voluptates ex omnis deserunt, 
+recusandae enim vel error similique fugit porro blanditiis ea! Dolores eligendi cupiditate hic!
+</p>
+
+<p>
+Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+Atque dignissimos voluptas ipsam sed voluptates ex omnis deserunt, 
+recusandae enim vel error similique fugit porro blanditiis ea! Dolores eligendi cupiditate hic!
+</p>
+
+
+<p class="new_line">
+new line
+</p>
+        
+
+</div>
+<!-- //box_01 -->
+
+
+
+
+
+<div class="box_02 box_cmn">
+    <h2>2. 가상클래스를 이용한 clearfix</h2>
+    <div class="float_left">
+    
+    </div>
+    
+    <div class="float_right">
+    
+    </div>
+    
+    <p>
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+    Atque dignissimos voluptas ipsam sed voluptates ex omnis deserunt, 
+    recusandae enim vel error similique fugit porro blanditiis ea! Dolores eligendi cupiditate hic!
+    </p>
+    
+    <p>
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+    Atque dignissimos voluptas ipsam sed voluptates ex omnis deserunt, 
+    recusandae enim vel error similique fugit porro blanditiis ea! Dolores eligendi cupiditate hic!
+    </p>
+    
+    
+    <p class="new_line">
+    new line
+    </p>
+    
+    </div>
+    <!-- //box_02 -->
+
+
+    <div class="box_03 box_cmn">
+        <h2>3. overflow:hidden </h2>
+        <div class="box_inner">
+            <div class="float_left">
+            
+            </div>
+            
+            <div class="float_right">
+            
+            </div>
+            
+            <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            Atque dignissimos voluptas ipsam sed voluptates ex omnis deserunt,
+            recusandae enim vel error similique fugit porro blanditiis ea! Dolores eligendi cupiditate hic!
+            </p>
+            
+            <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            Atque dignissimos voluptas ipsam sed voluptates ex omnis deserunt,
+            recusandae enim vel error similique fugit porro blanditiis ea! Dolores eligendi cupiditate hic!
+            </p>
+        </div>
+        
+        
+        <p class="new_line">
+        new line
+        </p>
+        
+        </div>
+        <!-- //box_03 -->
+
+
+
+
+
+
+</body>
+</html>

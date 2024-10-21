@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <title>Document</title>
+
+
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              width: {
+                "400cus": '400px', // class name : value
+              }
+            }
+          }
+        }
+      </script>
+
+
+
+</head>
+<body>
+    
+<style>
+
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {font-family:Pretendard-Regular;}
+
+html {font-size:16px}
+
+#wrap .inner_wrap {width:98%;margin:0 auto;padding:10px;display:block;overflow:hidden}
+#wrap p {margin:0 0 20px 0;border:1px solid #ccc;padding:5px}
+
+span.css {color:#0ea5e9;font-weight:bold;}
+</style>
+<div id="wrap">
+    <div class="inner_wrap">
+        <h2 class="">Sizing</h2>
+        
+        <p class="w-0"><span class="css">w-0</span>  width:0px;</p>
+        <p class="w-px"><span class="css">w-px</span> width:1px</p>
+        
+        <p class="w-4"><span class="css">w-4</span> width:1rem; 16px</p>
+        <p class="w-96"><span class="css">w-100</span></p>
+        <p class="w-auto"><span class="css">w-auto</span> width:auto</p>
+        <p class="w-1/2"><span class="css">w-1/2</span> width:50%</p>
+        <p class="w-2/4"><span class="css">w-2/4</span> width:50%</p>
+        <p class="w-1/4"><span class="css">w-1/4</span> width:25%</p>
+        <p class="w-1/5"><span class="css">w-1/5</span> width:20%</p>
+        <p class="w-full"><span class="css">w-full</span> width:100%</p>
+        <p class="w-screen"><span class="css">w-screen</span> width:100vw</p>
+
+        <p class="w-[300px]"><span class="css">w-300px</span> 고정값 입력</p>
+        <p class="w-400cus"><span class="css">w-400cus</span> 스크립트 커스터마이징</p>
+
+    </div>
+    <!-- //inner_wrap -->
+</div>
+<!-- //wrap -->
+
+
+</body>
+</html>

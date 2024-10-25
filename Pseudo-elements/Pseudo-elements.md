@@ -33,6 +33,7 @@ div::after {content:""}
 ## ::before, ::after 사용 방법
 
 * clearfix
+
     ```
     .float_r::after {content:"";display:block;clear:both}
     ```
@@ -41,21 +42,21 @@ div::after {content:""}
 * 불릿
 
     ```
-    ul li {padding:0 0 0 10px;position:relative}
-    ul li::before {content:"";width:10px;height:10px;background:url("/src/img/bullet.png") 0 0 no-repeat;position:absolute:left:0;top:0}
 
+    ul li {padding:0 0 0 10px;position:relative}  
+    ul li::before {content:"";width:10px;height:10px;background:url("/src/img/bullet.png") 0 0 no-repeat;position:absolute:left:0;top:0}   
 
     /* 아래의 방식도 가능 */
-    ul li::before {content:url("/src/img/bullet.png")}
-
+    ul li::before {content:url("/src/img/bullet.png")}  
+    
     ```
     
 
 * 뱃지(badge) : 불릿방식과 같으며 알림이 떴을 때 
 
     ```
-    ul li {padding:0 0 0 10px;position:relative}
-    ul li.is_alarm:before {content:"";width:10px;height:10px;background:url("/src/img/bullet.png") 0 0 no-repeat;position:absolute:left:0;top:0}
+    ul li {padding:0 0 0 10px;position:relative}  
+    ul li.is_alarm:before {content:"";width:10px;height:10px;background:url("/src/img/bullet.png") 0 0 no-repeat;position:absolute:left:0;top:0}   
     ```
 
     * 가상요소는 DOM 접근이 어렵기 때문에 토글 클래스로 처리하는게 편하다.

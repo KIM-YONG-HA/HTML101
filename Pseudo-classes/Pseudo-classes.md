@@ -45,6 +45,10 @@ input:not() {...}
 div:has(p) {...}
 ```
 
+
+## :root 
+
+
 Link: [Google][googlelink]
 
 [googlelink]: https://google.com "Go google"

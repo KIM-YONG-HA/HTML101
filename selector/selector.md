@@ -136,24 +136,101 @@
 
 * [속성 |= 속성값] 선택자
 
+    * 속성값이 포함된 요소를 선택
+    
+    * my-name 이라는 class에 my만 찾는 것이 아니라  
+    my- 하이픈도 가능
+
+    
 * [속성 ^= 속성값] 선택자
+
+    * 속성값으로 시작하는 요소 선택
+    * value%
 
 * [속성 $= 속성값] 선택자
 
+    * 속성값으로 끝나는 요소 선택
+    * ex) 확장자를 찾을 때 사용
+
+    * %value
+
+    ```
+    [href=xls] {...}
+    [src=jpg] {...}
+    [src=png] {...}
+    ```
+
+
 * [속성 *= 속성값] 선택자
+
+    * 속성값이 포함되어 있는 요소 선택(부분 검색)
+    
+    * %value%
+    ```
+    [href=naver] {...}
+    ```
+
+
 
   
     
 
+## 속성선택자 정리 
+
 <table>
 <tr>
-<td>선택자<td>
-<td>선택요소</td>
-<td>CSS</td>
+<th>선택자<td>
+<th>선택요소</th>
+<th>CSS</th>
+</tr>
+
+<tr>
+<td>[속성] 선택자<td>
+<td>특정 속성이 있는 요소를 선택</td>
+<td>href, require, etc...</td>
+</tr>
+
+<tr>
+<td>[속성 = 속성값] 선택자<td>
+<td></td>
+<td></td>
 </tr>
 
 
+<tr>
+<td><td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td><td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td><td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td><td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td><td>
+<td></td>
+<td></td>
+</tr>
+
+
+
 </table>
+
 
 
 

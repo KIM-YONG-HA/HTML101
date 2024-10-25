@@ -30,7 +30,7 @@ div::before {content:""}
 div::after {content:""}
 ```
 
-## ::before, ::after 사용 방법
+## ::before, ::after 응용
 
 * clearfix
 

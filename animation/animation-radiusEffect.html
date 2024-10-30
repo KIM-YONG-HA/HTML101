@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation-radiusEffect</title>
+</head>
+<body>
+    
+
+
+<style>
+
+
+
+.ani_cmn .element {width:100px;height:100px;background:#fff;border:1px solid #ccc;background:#fa1;}
+
+.ani_01 .element{
+
+animation-name:bgEffect;
+animation-duration:1s;
+animation-delay:0s;
+animation-iteration-count:1;
+animation-direction:alternate;
+animation-timing-function:linear;
+
+}
+
+.ani_02 .element{
+
+animation-name:bgEffect;
+animation-duration:1s;
+animation-delay:0s;
+animation-iteration-count:2;
+animation-direction:alternate;
+animation-timing-function:linear;
+
+}
+
+.ani_03 .element{
+
+animation-name:bgEffect;
+animation-duration:1s;
+animation-delay:0s;
+animation-iteration-count:3;
+animation-direction:alternate;
+animation-timing-function:linear;
+
+}
+
+.ani_04 .element{
+
+animation-name:bgEffect;
+animation-duration:1s;
+animation-delay:0s;
+animation-iteration-count:4;
+animation-direction:alternate;
+animation-timing-function:linear;
+
+}
+
+
+
+@keyframes bgEffect{
+
+from {border-radius:0;}
+to {border-radius:50%;}
+
+}
+
+
+</style>
+
+
+<h1>border-radius 0에서 50%</h1>
+<div class="ani_01 ani_cmn">
+<p class="txt">animation-iteration-count:1</p>
+<p>50</p>
+<div class="element"></div>
+</div>
+<!-- //ani_01 -->
+
+
+<div class="ani_02 ani_cmn">
+    <p class="txt">animation-iteration-count:2</p>
+    <p>0-50</p>
+    <div class="element"></div>
+</div>
+<!-- //ani_02 -->
+
+<div class="ani_03 ani_cmn">
+    <p class="txt">animation-iteration-count:3</p>
+    <p>0-50-0</p>
+    <div class="element"></div>
+</div>
+<!-- //ani_03 -->
+
+<div class="ani_04 ani_cmn">
+    <p class="txt">animation-iteration-count:4</p>
+    <p>0-50-0-50</p>
+    <div class="element"></div>
+</div>
+<!-- //ani_04 -->
+
+
+</body>
+</html>

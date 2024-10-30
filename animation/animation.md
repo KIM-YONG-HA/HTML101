@@ -18,14 +18,14 @@ javascript를 사용하지 않고 css만으로 애니메이션 구현 가능
 
 
 # 1. @keyframes 
-css에서 애니메이션 효과를 작성하기 위해서 @keyframe 키워드를 사용하여 작성한다
+css에서 애니메이션 효과를 작성하기 위해서 @keyframes 키워드를 사용하여 작성한다
 
-## @keyfame 작성1
+## @keyfames 작성1
 from(시작), to(끝)을 이용하여 작성
 
 ``` css
 
-@keyframe animationEffect {
+@keyframes animationEffect {
 
     from {...}
     to {...}
@@ -34,12 +34,12 @@ from(시작), to(끝)을 이용하여 작성
 
 ```
 
-## @keyfame 작성2
+## @keyfames 작성2
 퍼센테이지를 이용하여 단계별로 작성
 
 ``` css
 
-@keyframe animationEffect {
+@keyframes animationEffect {
 
     0% {...}
     50% {...}
@@ -130,10 +130,10 @@ animation-direction:alternate;
 
 ``` css
 
-@keyframe opacityEffect{
+@keyframes radiusEffect{
 
-    from {opacity:.5}
-    to {opacity:1}
+    from {border-radius:0;}
+    to {border-radius:50%;}
 
 }
 
@@ -144,7 +144,7 @@ animation-direction:alternate;
 ``` css 
 
 div {
-animation-name:opacityEffect;
+animation-name:radiusEffect;
 animation-duration:1s;
 animation-delay:0s;
 animation-iteration-count:4;
@@ -192,7 +192,6 @@ animation-timing-function:linear;
 ## 8. animation-fill-mode 속성 
 
 animation-fill-mode 속성은 애니메이션이 재생되지 않을 때(시작 전, 종료 후, 둘 다) 대상 요소에 대한 스타일을 지정한다.
-
 
 * none : 실행 전이나 실행 후에 요소에 스타일을 적용하지 않음(default값)
 

@@ -1,9 +1,11 @@
+``` html
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>form 유효성 검사</title>
 </head>
 <body>
 
@@ -15,34 +17,28 @@
 
 
 <ul>
-    <li>input text only string</li>
-    <li><input type="text" name="user_name" title="이름" class="use_vali only_string" placeholder="이름"></li>
-</ul>
-
-<ul>
-    <li>input text only number</li>
-    <li><input type="text" name="user_tel" title="연락처" class="use_vali only_number" maxlength="11" placeholder="연락처"></li>
+    <li>input text</li>
+    <li><input type="text" name="user_name" title="이름" class="use_vali" placeholder="이름" disabled></li>
 </ul>
 
 <ul>
     <li>input checkbox</li>
     <li>
-        
-        <input type="checkbox" name="ott[]" title="ott" value="넷플릭스" class="use_vali">
-        <label for="">넷플릭스</label>
-
-        <input type="checkbox" name="ott[]" title="ott" value="쿠팡플레이" class="use_vali">
-        <label for="">쿠팡플레이</label>
-
-        <input type="checkbox" name="ott[]" title="ott" value="왓챠" class="use_vali">
-        <label for="">왓챠</label>
-
-        <input type="checkbox" name="ott[]" title="ott" value="디즈니플러스" class="use_vali">
-        <label for="">디즈니플러스</label>
-
-        <input type="checkbox" name="ott[]" title="ott" value="티빙" class="use_vali">
-        <label for="">티빙</label>
-
+        <label for="">
+            <input type="checkbox" name="ott[]" title="ott" value="넷플릭스" class="use_vali"> 넷플릭스
+        </label>
+        <label for="">
+            <input type="checkbox" name="ott[]" title="ott" value="디즈니플러스" class="use_vali"> 디즈니플러스
+        </label>
+        <label for="">
+            <input type="checkbox" name="ott[]" title="ott" value="티빙" class="use_vali"> 티빙
+        </label>
+        <label for="">
+            <input type="checkbox" name="ott[]" title="ott" value="쿠팡플레이" class="use_vali"> 쿠팡플레이
+        </label>
+        <label for="">
+            <input type="checkbox" name="ott[]" title="ott" value="왓챠" class="use_vali"> 왓챠
+        </label>
     </li>
 </ul>
 
@@ -96,9 +92,7 @@
         <input type="checkbox" name="hobby[]" class="use_vali has_etc" title="취미" id="hobby3">
         <label for="hobby3"><span class="custom_inp"></span>기타</label>
 
-
         <input type="text" name="hobby_etc" class="use_vali" title="취미 기타" disabled>
-
 
 
     </li>
@@ -108,9 +102,7 @@
 
 <input type="submit" value="확인">
 
-
 </form>    
-
 
 
 
@@ -120,8 +112,6 @@
 // form과 유효성 검사를 할 요소 
 let frm = document.querySelector("form.use_validator");
 let el = document.querySelectorAll(".use_vali");
-let onlyStrEl = document.querySelectorAll(".only_string");
-let onlyNumEl = document.querySelectorAll(".only_number");
 
 
 // input, select, textarea 유효성검사 
@@ -193,6 +183,9 @@ function myValidator(){
 
         } 
 
+
+        
+
     }
 
     return true;
@@ -201,13 +194,9 @@ function myValidator(){
 
 
 // 유효성 검사를 사용하는 .use_vali에 대한 클릭 이벤트 
-el.forEach(element => { element.addEventListener("click", isEtc); });
-
-// 문자
-onlyStrEl.forEach(element => { element.addEventListener("keyup", () => myValidator_onlyString(element)); });
-
-// 숫자
-onlyNumEl.forEach(element => { element.addEventListener("keyup", () => myValidator_onlyNumber(element)); });
+el.forEach(element => {
+    element.addEventListener("click", isEtc);
+});
 
 
 // 클릭 이벤트 발생시 추가 인풋에 대한 disabled 처리 
@@ -233,20 +222,17 @@ function isEtc(){
 }
 
 
-// 한영 제외 제거 함수
+function myValidator_onlyNum(el){
+	
+   return el.value.replace(/[^0-9]/g,'');
+	
+}
+	
 function myValidator_onlyString(el){
-    
-    el.value = el.value.replace(/[^ㄱ-ㅎ가-힣a-zA-Z]/g,'');
+	
+    return el.value.replace(/[^a-z]/g,'');
      
-}
-
-// 숫자 제외 제거 함수
-function myValidator_onlyNumber(el){
-
-    el.value = el.value.replace(/[^0-9]/g,'');
-	
-}
-	
+ }
 
 
 </script>
@@ -254,3 +240,6 @@ function myValidator_onlyNumber(el){
     
 </body>
 </html>
+
+
+```

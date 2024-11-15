@@ -83,15 +83,20 @@
 <ul>
     <li>취미</li>
     <li>
-        <label>
-            <input type="checkbox" name="hobby[]" class="use_vali">독서
-        </label>
-        <label>
-            <input type="checkbox" name="hobby[]" class="use_vali">운동
-        </label>
-        <label>
-            <input type="checkbox" name="hobby[]" class="use_vali">여행
-        </label>
+
+        <input type="checkbox" name="hobby[]" class="use_vali" title="취미" id="hobby1">
+        <label for="hobby1"><span class="custom_inp"></span>독서</label>
+
+        <input type="checkbox" name="hobby[]" class="use_vali" title="취미" id="hobby2">
+        <label for="hobby2"><span class="custom_inp"></span>여행</label>
+
+        <input type="checkbox" name="hobby[]" class="use_vali has_etc" title="취미" id="hobby3">
+        <label for="hobby3"><span class="custom_inp"></span>기타</label>
+
+
+        <input type="text" name="hobby_etc" class="use_vali" title="취미 기타" disabled>
+
+
 
     </li>
 </ul>
@@ -111,13 +116,28 @@
 
 
 
+<!--
+
+
+유효성 검사할 요소에 use_vali
+
+
+
+
+-->
+
+
+
 <script>
 
+
+// form과 유효성 검사를 할 요소 
 let frm = document.querySelector("form.use_validator");
+let el = document.querySelectorAll(".use_vali");
 
+
+// input, select, textarea 유효성검사 
 function myValidator(){
-
-    let el = document.querySelectorAll(".use_vali");
 
     for(let i=0;i<el.length;i++){
 
@@ -142,7 +162,6 @@ function myValidator(){
                 }
 
             } else if(type == "checkbox" || type == "radio") {
-
                 
                 let count = 0;
 
@@ -186,13 +205,56 @@ function myValidator(){
 
         } 
 
+
+        
+
     }
 
-
-    console.log("myValidator");
-    return false;
+    return true;
 
 }
+
+
+// 유효성 검사를 사용하는 .use_vali에 대한 클릭 이벤트 
+el.forEach(element => {
+    element.addEventListener("click", isEtc);
+});
+
+
+// 클릭 이벤트 발생시 추가 인풋에 대한 disabled 처리 
+function isEtc(){
+
+    if(!this.classList.contains("has_etc")) return false;
+
+    let name = this.getAttribute("name").replace("[]","");
+    let etcEl = document.querySelector(`[name="${name}_etc"]`);
+
+    if (this.checked) {
+
+        etcEl.removeAttribute("disabled");
+        etcEl.focus();
+
+    } else {
+
+        etcEl.setAttribute("disabled", true);
+        etcEl.value = "";
+
+    }
+
+}
+
+
+function myValidator_onlyNum(el){
+	
+   return el.value.replace(/[^0-9]/g,'');
+	
+}
+	
+function myValidator_onlyString(el){
+	
+    return el.value.replace(/[^a-z]/g,'');
+     
+ }
 
 
 </script>

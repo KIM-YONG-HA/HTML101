@@ -4,7 +4,7 @@
 
 
 ## 1차원 배열
-### for
+### for문
 
 ``` javascript
 
@@ -18,7 +18,7 @@ for(let i=0;i<arr.length;i++){
 
 ```
 
-### for of
+### for of문
 ``` javascript
 
 let arr = ["가","나","다","라"];
@@ -33,7 +33,7 @@ for(let el of arr){
 
 
 
-### forEach
+### forEach 메서드
 ``` javascript
 
 let arr = ["가","나","다","라"];
@@ -56,8 +56,6 @@ arr.forEach(function(el, idx){
 라
 ```
 
-결과는 모두 동일하며 상황에 따라서 어떤 로직으로 구현할지 선택한다.  
-인덱스가 필요하다면 forEach도 좋은 선택.
 
 
 
@@ -65,7 +63,7 @@ arr.forEach(function(el, idx){
 
 ## 2차원 배열
 
-### for
+### for문
 
 ``` javascript:;
 
@@ -89,7 +87,7 @@ for(let i=0;i<arr.length;i++){
 
 ```
 
-### for of
+### for of문
 ``` javascript:;
 
 let arr = [
@@ -112,7 +110,7 @@ for(let el of arr){
 
 ```
 
-### forEach
+### forEach 메서드
 
 ``` javascript:;
 
@@ -155,7 +153,7 @@ arr.forEach(function(el, idx){
 ## 객체 배열 (Object Array)
 
 
-### for
+### for문
 
 ``` javascript
 
@@ -206,7 +204,7 @@ console.log("경도 : " + arr[i].longitude);
 ```
 
 
-### for of
+### for of문
 
 ``` javascript
 
@@ -256,7 +254,7 @@ console.log("경도 : " + el.longitude);
 
 
 
-### forEach
+### forEach 메서드
 
 ``` javascript
 
@@ -307,7 +305,7 @@ console.log("경도 : " + el.longitude);
 
 
 
-## 출력결과
+### 출력결과
 
 ```
 기관명 : 서울시청
@@ -327,4 +325,19 @@ console.log("경도 : " + el.longitude);
 위도 : 37.88530735666828
 경도 : 127.72982257639035
 ```
+
+
+
+## 성능 차이 
+
+1. for 문
+반복 조건을 미리 정하여 인덱스로 배열에 접근하기 때문에 빠르다.
+
+2. for of 문
+ES6에 도입된 반복문으로 배열또는 iterable 객체에서 **순차적**으로 요소를 가져오는 방식이다.   
+for문보다 약간 느리지만 가독성이 좋다.
+
+3. forEach 메서드   
+forEach는 배열의 각 요소에 대한 콜백함수를 실행하는 메소드.   
+콜백 함수 호출로 인한 오버헤드 때문에 for, for of 보다 성능이 떨어질 수 있다고 한다.
 
